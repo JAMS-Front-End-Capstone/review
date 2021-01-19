@@ -2,8 +2,12 @@ import React from 'react';
 
 const  WriteReview = () => {
   return (  
-    <div>
-      WriteReview
+    <div className='mainWrite'>
+      <div className='subWrite'>
+        <div className='write'>
+          <div>Reviews</div>
+        </div>
+      </div>
     </div>
   );
 }
