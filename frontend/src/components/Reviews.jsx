@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Menu from './Menu.jsx';
 import WriteReview from './WriteReview.jsx';
 import TabReview from './TabReview.jsx';
