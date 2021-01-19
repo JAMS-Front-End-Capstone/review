@@ -31,7 +31,7 @@ app.get('/api/reviews', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('hello!')
 })
 
 app.listen(port, () => {
