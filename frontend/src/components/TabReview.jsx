@@ -18,11 +18,12 @@ const  TabReview = () => {
       });
   };
   return (  
-    <div>
-      <h1>TabReview</h1>
-      < Summary />
-      < SearchBar />
-      < ReviewList list={list}/>
+    <div className='reviewTabs'>
+      <div>
+        < Summary />
+        < SearchBar />
+        < ReviewList list={list}/>
+      </div>
     </div>
   );
 }
