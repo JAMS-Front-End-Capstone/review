@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import Summary from './tabs/Summary.jsx';
-import SearchBar from './tabs/SearchBar.jsx';
-import ReviewList from './tabs/ReviewList.jsx';
+import axios from 'axios';
+import Summary from './tabs/Summary';
+import SearchBar from './tabs/SearchBar';
+import ReviewList from './tabs/ReviewList';
 
-
-
-
-
-const  TabReview = () => {
+const TabReview = () => {
   const [list, setList] = useState([]);
 
-
   const getReviews = () => {
-    axios.get(`/api/reviews`)
+    axios.get('/api/reviews')
       .then((reviews) => {
         setList(reviews.data);
       });
   };
-  return (  
-    <div className='reviewTabs'>
+  return (
+    <div className="reviewTabs">
       <div>
-        < Summary />
-        < SearchBar />
-        < ReviewList list={list}/>
+        <Summary />
+        <SearchBar />
+        <ReviewList list={list} getReviews={getReviews} />
       </div>
     </div>
   );
-}
- 
+};
+
 export default TabReview;

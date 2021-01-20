@@ -1,8 +1,8 @@
 import React from 'react';
 
-const  Summary = () => {
+const Summary = () => {
   return (  
-    <div className='firstComponent'>
+    <div className="firstComponent">
       <div className='ui_columns'>
         <div className='ui_column is-5 is-12-mobile'>
           <div className='travelerRating'>Traveler Rating</div>
@@ -62,7 +62,7 @@ const  Summary = () => {
             </label>
             <span className='ratingStick'>
               <span className='fullBar'>
-                <span className='percentBar' style={{width:'0%'}}></span>
+                <span className='percentBar' style={{ width:'0%' }}></span>
               </span>
             </span>
             <span className='ratingNum'>0</span>
@@ -170,15 +170,10 @@ const  Summary = () => {
               </label>
             </li>
           </ul>
-
-
-
         </div>
-
-
       </div>
     </div>
   );
-}
- 
+};
+
 export default Summary;
