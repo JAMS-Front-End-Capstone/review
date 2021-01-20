@@ -6,7 +6,7 @@ const  SearchBar = () => {
       <span className='ui_icon search wF-i9JOp'>
 
       </span>
-      <input type='text' value className='search' placeholder='search reviews' autoComplete='on' />    
+      <input type='text' className='start middle searchRe' placeholder='search reviews' autoComplete='on' />    
     </div>
   );
 }

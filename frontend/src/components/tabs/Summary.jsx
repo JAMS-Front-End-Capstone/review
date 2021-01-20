@@ -8,7 +8,7 @@ const  Summary = () => {
           <div className='travelerRating'>Traveler Rating</div>
           <ul className='ratingBar'>
             <li className='ui_checkbox _3gEj_Jb5'>
-              <input type='checkbox' id='ReviewRatingFilter_5' value='5' disabled />
+              <input type='checkbox' id='ReviewRatingFilter_5' value='5'/>
               <label for='ReviewRatingFilter_5' className='classified class_end'>
                 Excellent
               </label>
