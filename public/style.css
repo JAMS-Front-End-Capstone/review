@@ -242,6 +242,10 @@ a{text-decoration:none;}
 .ui_button.primary:not(.disabled):focus{outline:none;text-decoration:none;box-shadow:0 0 0 2px #fff,0 0 0 3px #000;}
 .ui_button.primary:not(.disabled):active{border-color:#525252;background-color:#525252;box-shadow:none;}
 
+.ui_button.secondary{border-color:#000;border-radius:3px;background-color:#fff;color:#000;}
+  .ui_button.secondary:not(.disabled):hover{text-decoration:none;background-color:#d6d6d6;border-color:#000;color:#000;}
+  .ui_button.secondary:not(.disabled):focus{outline:none;text-decoration:none;box-shadow:0 0 0 2px #fff,0 0 0 3px #000;}
+  .ui_button.secondary:not(.disabled):active{background-color:#adadad;border-color:#000;color:#000;box-shadow:none;}
 
 
 .dropDownBox{
@@ -613,11 +617,12 @@ a{text-decoration:none;}
 .pagenationWrapper {
   margin-bottom:12px;
 
+
 }
 
 .pagenation {
   border:none;
-  padding:12px 0;
+  padding:12px 12px;
   overflow:hidden;
   border-width:1px 0;
   border-style:solid;

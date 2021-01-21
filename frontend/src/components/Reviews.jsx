@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Menu from './Menu';
 import WriteReview from './WriteReview';
@@ -6,13 +6,16 @@ import TabReview from './TabReview';
 import Pagenation from './Pagenation';
 
 const Reviews = () => {
-  const [list, setList] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [ratingList, setRatingList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
 
   const getReviews = () => {
     axios.get('/api/reviews')
-      .then((reviews) => {
-        setList(reviews.data);
+      .then((res) => {
+        setReviews(res.data);
       });
   };
 
@@ -22,19 +25,34 @@ const Reviews = () => {
         setRatingList(ratings.data);
       });
   };
+  // const get = async () => {
+  //   setLoading(true);
+  //   const res = await axios.get('/api/reviews');
+  //   setList(res.data);
+  //   setLoading(false);
+  // };
 
   useEffect(() => {
-    getReviews();
     getRatings();
+    getReviews();
   }, []);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
     <div className="wrapper">
       <div className="mainReview">
-        <Menu total={list.length} />
+        <Menu total={reviews.length} />
         <WriteReview />
-        <TabReview ratings={ratingList} />
-        <Pagenation />
+        <TabReview ratings={ratingList} list={currentPosts} loading={loading} />
+        <Pagenation
+          postsPerPage={postsPerPage}
+          totalPosts={reviews.length}
+          paginate={paginate}
+        />
       </div>
     </div>
   );

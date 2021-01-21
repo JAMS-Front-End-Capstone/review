@@ -4,13 +4,14 @@ import Summary from './tabs/Summary';
 import SearchBar from './tabs/SearchBar';
 import ReviewList from './tabs/ReviewList';
 
-const TabReview = ({ ratings }) => (
+// eslint-disable-next-line react/prop-types
+const TabReview = ({ ratings, list, loading }) => (
 
   <div className="reviewTabs">
     <div>
       <Summary ratings={ratings} />
       <SearchBar />
-      <ReviewList />
+      <ReviewList list={list} loading={loading} />
     </div>
   </div>
 
@@ -18,5 +19,7 @@ const TabReview = ({ ratings }) => (
 
 TabReview.propTypes = {
   ratings: propTypes.arrayOf(propTypes.number).isRequired,
+  loading: propTypes.bool.isRequired,
+
 };
 export default TabReview;

@@ -148,7 +148,7 @@ const Summary = ({ ratings }) => (
             <label htmlFor="LanguageFilter_1" className="languageOption">
               <span className="lang"> French</span>
               <span className="langNum">
-                (70)
+                (0)
               </span>
             </label>
           </li>
@@ -157,7 +157,7 @@ const Summary = ({ ratings }) => (
             <label htmlFor="LanguageFilter_2" className="languageOption">
               <span className="lang"> English</span>
               <span className="langNum">
-                (36)
+                (40)
               </span>
             </label>
           </li>
@@ -166,7 +166,7 @@ const Summary = ({ ratings }) => (
             <label htmlFor="LanguageFilter_3" className="languageOption">
               <span className="lang"> Spanish</span>
               <span className="langNum">
-                (8)
+                (0)
               </span>
             </label>
           </li>

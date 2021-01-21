@@ -6,8 +6,8 @@ const Pagenation = () => {
   return (
     <div className="pagenationWrapper">
       <div className="pagenation to-center">
-        <a href className="previous">Previous</a>
-        <a href className="next">Next</a>
+        <a href className="previous ui_button secondary">Previous</a>
+        <a href className="next ui_button primary">Next</a>
       </div>
       <PageNums />
     </div>

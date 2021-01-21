@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-function ReviewSingle() {
+function ReviewSingle({ item }) {
+  // debugger;
   return (
     <div className="Dq9MAugU T870kzTX LnVzGwUB">
       <div className="_310S4sqz">
@@ -20,14 +22,19 @@ function ReviewSingle() {
           </div>
           <div className="_2fxQ4TOx">
             <span>
-              <a className="ui_header_link _1r_My98y" href="/Profile/RomarDelta">RomarDelta </a>
-              wrote a review Sep 2015
+              <a className="ui_header_link _1r_My98y" href="/Profile/RomarDelta">
+                {item.user.name}
+              </a>
+              {` wrote a review ${item.reviewDate} 2015`}
             </span>
           </div>
           <div className="_1EpRX7o3">
             <span className="_1TuWwpYf">
               <span className="ui_icon map-pin-fill _2kj8kWkW" />
-              Delta, Canada
+              {/* {item[0].user.location[0]}
+              ,
+              {' '}
+              {item[0].user.location[1]} */}
             </span>
             <span className="_3fPsSAYi">
               <span className="_1fk70GUn">63</span>
@@ -47,7 +54,7 @@ function ReviewSingle() {
           </div>
         </div>
         <div className="glasR4aX" dir="ltr" data-test-target="review-title">
-          Great Beach
+          {item.title}
         </div>
         <div className="_3hDPbqWO">
           <div className="_2f_ruteS _1bona3Pu _2uD5bLZZ">
