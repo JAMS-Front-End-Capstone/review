@@ -102,7 +102,7 @@ const Summary = ({ ratings }) => (
             <label htmlFor="TravelTypeFilter_3" className="classified">
               Friends
             </label>
-          </li> 
+          </li>
         </ul>
       </div>
       <div className="ui_column  is-shown-at-tablet">
@@ -112,28 +112,28 @@ const Summary = ({ ratings }) => (
             <input type="checkbox" id="TravelTimeFilter_0" value="0" />
             <label htmlFor="TravelTimeFilter_0" className="classified">
               Mar-May
-              </label>
+            </label>
           </li>
           <li className="ui_checkbox _3gEj_Jb5">
             <input type="checkbox" id="TravelTimeFilter_1" value="1" />
             <label htmlFor="TravelTimeFilter_1" className="classified">
               Jun-Aug
-              </label>
+            </label>
           </li>
           <li className="ui_checkbox _3gEj_Jb5">
             <input type="checkbox" id="TravelTimeFilter_2" value="2" />
             <label htmlFor="TravelTimeFilter_2" className="classified">
               Sep-Nov
-              </label>
+            </label>
           </li>
           <li className="ui_checkbox _3gEj_Jb5">
             <input type="checkbox" id="TravelTimeFilter_3" value="3" />
             <label htmlFor="TravelTimeFilter_3" className="classified">
               Dec-Feb
-              </label>
+            </label>
           </li>
-        </ul> 
-      </div>  
+        </ul>
+      </div>
       <div className="ui_column  is-3-tablet is-shown-at-tablet">
         <div className="travelerRating"> Language</div>
         <ul className="ratingBar">
@@ -176,6 +176,6 @@ const Summary = ({ ratings }) => (
   </div>
 );
 Summary.propTypes = {
-  ratings: propTypes.number.isRequired,
+  ratings: propTypes.arrayOf(propTypes.number).isRequired,
 };
 export default Summary;

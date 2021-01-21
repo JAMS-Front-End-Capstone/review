@@ -17,6 +17,6 @@ const TabReview = ({ ratings }) => (
 );
 
 TabReview.propTypes = {
-  ratings: propTypes.number.isRequired,
+  ratings: propTypes.arrayOf(propTypes.number).isRequired,
 };
 export default TabReview;
