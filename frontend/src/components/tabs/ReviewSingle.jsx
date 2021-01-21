@@ -7,7 +7,7 @@ function ReviewSingle({ item }) {
     <div className="Dq9MAugU T870kzTX LnVzGwUB">
       <div className="_310S4sqz">
         <a href className="_3x5_awTA ui_social_avatar inline">
-          <img alt="" src="https://media-cdn.tripadvisor.com/media/photo-t/1a/f6/ef/9c/default-avatar-2020-14.jpg" />
+          <img alt="" src="https://picsum.photos/100/100" />
         </a>
         <div className="_2uYWQXeO">
           <div className="_3TMaHs5O">
@@ -25,23 +25,25 @@ function ReviewSingle({ item }) {
               <a className="ui_header_link _1r_My98y" href="/Profile/RomarDelta">
                 {item.user.name}
               </a>
-              {` wrote a review ${item.reviewDate} 2015`}
+              {` wrote a review ${item.reviewDate} 2019`}
             </span>
           </div>
           <div className="_1EpRX7o3">
             <span className="_1TuWwpYf">
               <span className="ui_icon map-pin-fill _2kj8kWkW" />
-              {/* {item[0].user.location[0]}
+              {item.user.location[0]}
               ,
               {' '}
-              {item[0].user.location[1]} */}
+              {item.user.location[1]}
             </span>
             <span className="_3fPsSAYi">
-              <span className="_1fk70GUn">63</span>
+              <span className="_1fk70GUn">{item.user.contributions}</span>
+              {' '}
               contributions
             </span>
             <span className="_3fPsSAYi">
-              <span className="_1fk70GUn">73</span>
+              <span className="_1fk70GUn">{item.user.helpfulVotes}</span>
+              {' '}
               helpful votes
             </span>
           </div>
@@ -59,7 +61,7 @@ function ReviewSingle({ item }) {
         <div className="_3hDPbqWO">
           <div className="_2f_ruteS _1bona3Pu _2uD5bLZZ">
             <div className="cPQsENeY">
-              <q className="IRsGHoPm">A great beach in the lagoon and very safe for swimming and snorkeling with superb views towards Moorea</q>
+              <q className="IRsGHoPm">{item.body}</q>
             </div>
             <div className="_36B4Vw6t">
               <div className="XUVJZtom" data-test-target="expand-review">
@@ -71,7 +73,9 @@ function ReviewSingle({ item }) {
           <div className="_27JpaCjl">
             <span className="_34Xs-BQm">
               <span className="_355y0nZn">Date of experience: </span>
-              September 2015
+              {item.timeOfTravel}
+              {' '}
+              2018
             </span>
           </div>
           <div className="_3d_mZXGr">

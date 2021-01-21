@@ -13,7 +13,7 @@ for (let i = 0; i < 10; i++) {
     title: faker.lorem.words(), // String is shorthand for {type: String}
     user: {
       name: faker.internet.userName(),
-      iconURL: faker.image.avatar(),
+      iconURL: 'https://i.pravatar.cc/100',
       location: [faker.address.city(), faker.address.country()],
       contributions: getRandomInt(130),
       helpfulVotes: getRandomInt(30),
