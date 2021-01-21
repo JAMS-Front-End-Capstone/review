@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewSingle from './ReviewSingle.jsx';
+import ReviewSingle from './ReviewSingle';
 
 const ReviewList = ({list}) => {
   return (  
@@ -8,5 +8,5 @@ const ReviewList = ({list}) => {
     </div>
   );
 }
- 
+
 export default ReviewList;

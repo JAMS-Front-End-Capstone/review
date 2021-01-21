@@ -22,6 +22,7 @@ const Reviews = () => {
         setRatingList(ratings.data);
       });
   };
+
   useEffect(() => {
     getReviews();
     getRatings();
@@ -32,7 +33,7 @@ const Reviews = () => {
       <div className="mainReview">
         <Menu total={list.length} />
         <WriteReview />
-        <TabReview />
+        <TabReview ratings={ratingList} />
         <Pagenation />
       </div>
     </div>

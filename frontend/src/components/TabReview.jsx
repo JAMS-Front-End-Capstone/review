@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import propTypes from 'prop-types';
 import Summary from './tabs/Summary';
 import SearchBar from './tabs/SearchBar';
 import ReviewList from './tabs/ReviewList';
 
-const TabReview = () => {
-  const [list, setList] = useState([]);
+const TabReview = ({ ratings }) => (
 
-  const getReviews = () => {
-    axios.get('/api/reviews')
-      .then((reviews) => {
-        setList(reviews.data);
-      });
-  };
-  return (
-    <div className="reviewTabs">
-      <div>
-        <Summary />
-        <SearchBar />
-        <ReviewList list={list} getReviews={getReviews} />
-      </div>
+  <div className="reviewTabs">
+    <div>
+      <Summary ratings={ratings} />
+      <SearchBar />
+      <ReviewList />
     </div>
-  );
-};
+  </div>
 
+);
+
+TabReview.propTypes = {
+  ratings: propTypes.number.isRequired,
+};
 export default TabReview;
