@@ -468,7 +468,7 @@ a{text-decoration:none;}
 
 .ui_bubble_rating:before{color:#fff;display:block;content:"\e00a\e00a\e00a\e00a\e00a";}
 .ui_bubble_rating:after{position:absolute;top:0;left:0;color:#00aa6c;}
-.ui_bubble_rating.bubble_40:after{content:"\e00b\e00b\e00b\e00b\e00d";}
+.ui_bubble_rating.bubble_40:after{content:"\e00b\e00b\e00b\e00b\e00b";}
 @media print{
 .ui_bubble_rating:before{color:transparent;}
 }
@@ -608,11 +608,33 @@ a{text-decoration:none;}
 ._3J15flPT.small ._2kj8kWkW{position:relative;top:-1px;margin-right:0;font-size:12px;}
 
 
+/* pagenation */
 
+.pagenationWrapper {
+  margin-bottom:12px;
 
+}
 
+.pagenation {
+  border:none;
+  padding:12px 0;
+  overflow:hidden;
+  border-width:1px 0;
+  border-style:solid;
+  border-color:#e0e0e0;
+  background-color:#fff;
+  text-align:center;
+}
 
-
+.pagination{padding:12px 0;overflow:hidden;border-width:1px 0;border-style:solid;border-color:#e0e0e0;background-color:#fff;text-align:center;}
+  .pagination .pageNumbers{display:inline-block;padding-top:3px;}
+  .pagination .pageNum{line-height:40px;height:40px;width:40px;font-size:14px;font-weight:700;border:none;display:inline-block;color:#000;cursor:pointer;border-radius:2px;}
+  .pagination .pageNum.disabled{cursor:default;}
+  .pagination .pageNum.current{background-color:#f2f2f2;border-color:#f2f2f2;color:#000;cursor:default;}
+  .pagination .separator{width:32px;line-height:30px;color:#8c8c8c;}
+  .pagination .separator:hover{text-decoration:none;}
+  .previous{float:left;}
+  .next{float:right;}
 
 
 

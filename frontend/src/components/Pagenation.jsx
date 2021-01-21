@@ -9,7 +9,7 @@ const Pagenation = () => {
         <a href className="previous">Previous</a>
         <a href className="next">Next</a>
       </div>
-
+      <PageNums />
     </div>
   );
 };

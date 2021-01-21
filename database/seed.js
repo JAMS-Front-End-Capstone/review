@@ -7,6 +7,8 @@ let imagearr = [];
     imagearr.push(faker.image.nature())
   };
 
+
+
 for (let i = 0; i < 10; i++) {
   const review = new Review({
     title:  faker.lorem.words(), // String is shorthand for {type: String}
@@ -23,7 +25,7 @@ for (let i = 0; i < 10; i++) {
     reviewDate: faker.date.month(),
     language: 'English',
     imageURL: imagearr,
-    tripType: 'Traveled as a couple'
+    tripType: 'Traveled as a couple',
   })
 
   review.save(function(err, result) {
