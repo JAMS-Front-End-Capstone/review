@@ -15,7 +15,7 @@ function ReviewSingle({ item }) {
     <div className="mainReviwSingleAugU middeSinglekzTX lastSingle">
       <div className="minorReviewsingle">
         <a href className="_3x5_awTA ui_social_avatar inline">
-          <img alt="" src="https://picsum.photos/100/100" />
+          <img alt="" src="https://picsum.photos/seed/picsum/200/300" />
         </a>
         <div className="bubbleMain">
           <div className="bubbleMinor">

@@ -7248,7 +7248,7 @@ function ReviewSingle(_ref) {
     className: "_3x5_awTA ui_social_avatar inline"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     alt: "",
-    src: "https://picsum.photos/100/100"
+    src: "https://picsum.photos/seed/picsum/200/300"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "bubbleMain"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
