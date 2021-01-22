@@ -5,16 +5,16 @@ const cors = require('cors');
 const morgan = require('morgan');
 // const db = require('../database/index.js');
 const Review = require('../database/Reviews.js');
-const getPercentage = require('./functions.js');
+const funcs = require('./functions.js');
 
 const app = express();
 const port = 3003;
 const sum = 40;
-const percent = [getPercentage(20, sum),
-  getPercentage(11, sum),
-  getPercentage(5, sum),
-  getPercentage(4, sum),
-  getPercentage(0, sum),
+const percent = [funcs.getPercentage(20, sum),
+  funcs.getPercentage(11, sum),
+  funcs.getPercentage(5, sum),
+  funcs.getPercentage(4, sum),
+  funcs.getPercentage(0, sum),
   20, 11, 5, 4, 0];
 
 // middleware
@@ -35,6 +35,10 @@ app.get('/api/reviews', (req, res) => {
 });
 
 app.get('/api/ratings', (req, res) => {
+  const size = Review.find({}).exec().then((li) => {
+    console.log(li.length);
+  });
+  console.log(size);
   res.send(percent);
   console.log('sent');
 });

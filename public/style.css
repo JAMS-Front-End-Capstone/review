@@ -472,7 +472,12 @@ a{text-decoration:none;}
 
 .ui_bubble_rating:before{color:#fff;display:block;content:"\e00a\e00a\e00a\e00a\e00a";}
 .ui_bubble_rating:after{position:absolute;top:0;left:0;color:#00aa6c;}
-.ui_bubble_rating.bubble_40:after{content:"\e00b\e00b\e00b\e00b\e00b";}
+.ui_bubble_rating.bubble_10:after{content:"\e00b\e00d\e00d\e00d\e00d";}
+.ui_bubble_rating.bubble_20:after{content:"\e00b\e00b\e00d\e00d\e00d";}
+.ui_bubble_rating.bubble_30:after{content:"\e00b\e00b\e00b\e00d\e00d";}
+.ui_bubble_rating.bubble_40:after{content:"\e00b\e00b\e00b\e00b\e00d";}
+.ui_bubble_rating.bubble_50:after{content:"\e00b\e00b\e00b\e00b\e00b";}
+
 @media print{
 .ui_bubble_rating:before{color:transparent;}
 }
@@ -633,9 +638,9 @@ a{text-decoration:none;}
 
 .pagination{padding:12px 0;overflow:hidden;border-width:1px 0;border-style:solid;border-color:#e0e0e0;background-color:#fff;text-align:center;}
   .pagination .pageNumbers{display:inline-block;padding-top:3px;}
-  .pagination .pageNum{line-height:40px;height:40px;width:40px;font-size:14px;font-weight:700;border:none;display:inline-block;color:#000;cursor:pointer;border-radius:2px;}
+  .pageNum{line-height:40px;height:40px;width:40px;font-size:14px;font-weight:700;border:none;display:inline-block;color:#000;cursor:pointer;border-radius:2px;}
   .pagination .pageNum.disabled{cursor:default;}
-  .pagination .pageNum.current{background-color:#f2f2f2;border-color:#f2f2f2;color:#000;cursor:default;}
+  .pageNum:hover{background-color:#f2f2f2;border-color:#f2f2f2;color:#000;cursor:default;}
   .pagination .separator{width:32px;line-height:30px;color:#8c8c8c;}
   .pagination .separator:hover{text-decoration:none;}
   .previous{float:left;}

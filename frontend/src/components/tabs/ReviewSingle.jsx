@@ -3,6 +3,14 @@ import React from 'react';
 
 function ReviewSingle({ item }) {
   // debugger;
+  const bubbleStyle = ['ui_bubble_rating bubble_10',
+    'ui_bubble_rating bubble_20',
+    'ui_bubble_rating bubble_30',
+    'ui_bubble_rating bubble_40',
+    'ui_bubble_rating bubble_50'
+  ];
+
+  const rating = bubbleStyle[item.rating - 1];
   return (
     <div className="Dq9MAugU T870kzTX LnVzGwUB">
       <div className="_310S4sqz">
@@ -52,7 +60,7 @@ function ReviewSingle({ item }) {
       <div className="oETBfkHU" data-reviewid="314838220">
         <div className="_2UEC-y30">
           <div className="nf9vGX55" data-test-target="review-rating">
-            <span className="ui_bubble_rating bubble_40" />
+            <span className={rating} />
           </div>
         </div>
         <div className="glasR4aX" dir="ltr" data-test-target="review-title">
@@ -63,12 +71,12 @@ function ReviewSingle({ item }) {
             <div className="cPQsENeY">
               <q className="IRsGHoPm">{item.body}</q>
             </div>
-            <div className="_36B4Vw6t">
+            {/* <div className="_36B4Vw6t">
               <div className="XUVJZtom" data-test-target="expand-review">
                 <span className="_3maEfNCR">Read more</span>
                 <span className="ui_icon caret-down _3aUwQbpX" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="_27JpaCjl">
             <span className="_34Xs-BQm">

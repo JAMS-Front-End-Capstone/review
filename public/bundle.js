@@ -6889,24 +6889,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
+var PageNums = function PageNums(_ref) {
+  var postsPerPage = _ref.postsPerPage,
+      totalPosts = _ref.totalPosts,
+      paginate = _ref.paginate;
+  var pageNumbers = [];
 
-var PageNums = function PageNums() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
-      list = _useState2[0],
-      setList = _useState2[1];
+  for (var i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pageNumbers"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", {
-    href: true,
-    className: "pageNum"
-  }, "1"));
+  }, pageNumbers.map(function (number) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: true,
+      onClick: function onClick() {
+        return paginate(number);
+      },
+      className: "pageNum"
+    }, number);
+  }));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PageNums);
@@ -6924,31 +6930,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _PageNums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PageNums */ "./frontend/src/components/PageNums.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _PageNums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PageNums */ "./frontend/src/components/PageNums.jsx");
+/* eslint-disable react/prop-types */
 
 
 
-
-var Pagenation = function Pagenation() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
-      list = _useState2[0],
-      setList = _useState2[1];
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+var Pagenation = function Pagenation(_ref) {
+  var postsPerPage = _ref.postsPerPage,
+      totalPosts = _ref.totalPosts,
+      paginate = _ref.paginate;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenationWrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenation to-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: true,
     className: "previous ui_button secondary"
-  }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", {
+  }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: true,
     className: "next ui_button primary"
-  }, "Next")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_PageNums__WEBPACK_IMPORTED_MODULE_2__.default, null));
+  }, "Next"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PageNums__WEBPACK_IMPORTED_MODULE_1__.default, {
+    postsPerPage: postsPerPage,
+    totalPosts: totalPosts,
+    paginate: paginate
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Pagenation);
@@ -7038,7 +7044,6 @@ var Reviews = function Reviews() {
     return setCurrentPage(pageNumber);
   };
 
-  console.log(reviews);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
@@ -7206,6 +7211,8 @@ __webpack_require__.r(__webpack_exports__);
 function ReviewSingle(_ref) {
   var item = _ref.item;
   // debugger;
+  var bubbleStyle = ['ui_bubble_rating bubble_10', 'ui_bubble_rating bubble_20', 'ui_bubble_rating bubble_30', 'ui_bubble_rating bubble_40', 'ui_bubble_rating bubble_50'];
+  var rating = bubbleStyle[item.rating - 1];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "Dq9MAugU T870kzTX LnVzGwUB"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -7271,7 +7278,7 @@ function ReviewSingle(_ref) {
     className: "nf9vGX55",
     "data-test-target": "review-rating"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ui_bubble_rating bubble_40"
+    className: rating
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "glasR4aX",
     dir: "ltr",
@@ -7284,16 +7291,7 @@ function ReviewSingle(_ref) {
     className: "cPQsENeY"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("q", {
     className: "IRsGHoPm"
-  }, item.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "_36B4Vw6t"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "XUVJZtom",
-    "data-test-target": "expand-review"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "_3maEfNCR"
-  }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ui_icon caret-down _3aUwQbpX"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, item.body))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "_27JpaCjl"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "_34Xs-BQm"
