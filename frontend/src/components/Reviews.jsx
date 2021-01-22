@@ -8,9 +8,12 @@ import Pagenation from './Pagenation';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [ratingList, setRatingList] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const getReviews = () => {
     axios.get('/api/reviews')
@@ -25,6 +28,18 @@ const Reviews = () => {
         setRatingList(ratings.data);
       });
   };
+
+  const next = () => {
+    if (indexOfLastPost !== reviews.length) {
+      paginate(currentPage + 1);
+    }
+  };
+
+  const prev = () => {
+    if (currentPage !== 1) {
+      paginate(currentPage - 1);
+    }
+  };
   // const get = async () => {
   //   setLoading(true);
   //   const res = await axios.get('/api/reviews');
@@ -37,21 +52,19 @@ const Reviews = () => {
     getReviews();
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
     <div className="wrapper">
       <div className="mainReview">
         <Menu total={reviews.length} />
         <WriteReview />
-        <TabReview ratings={ratingList} list={currentPosts} loading={loading} />
+        <TabReview ratings={ratingList} list={currentPosts} />
         <Pagenation
           postsPerPage={postsPerPage}
           totalPosts={reviews.length}
           paginate={paginate}
+          currentPage={currentPage}
+          prev={prev}
+          next={next}
         />
       </div>
     </div>

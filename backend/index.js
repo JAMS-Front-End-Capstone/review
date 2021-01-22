@@ -9,13 +9,13 @@ const funcs = require('./functions.js');
 
 const app = express();
 const port = 3003;
-const sum = 40;
-const percent = [funcs.getPercentage(20, sum),
-  funcs.getPercentage(11, sum),
-  funcs.getPercentage(5, sum),
-  funcs.getPercentage(4, sum),
-  funcs.getPercentage(0, sum),
-  20, 11, 5, 4, 0];
+// const sum = 40;
+// const percent = [funcs.getPercentage(20, sum),
+//   funcs.getPercentage(11, sum),
+//   funcs.getPercentage(5, sum),
+//   funcs.getPercentage(4, sum),
+//   funcs.getPercentage(0, sum),
+//   20, 11, 5, 4, 0];
 
 // middleware
 app.use(cors());
@@ -35,12 +35,9 @@ app.get('/api/reviews', (req, res) => {
 });
 
 app.get('/api/ratings', (req, res) => {
-  const size = Review.find({}).exec().then((li) => {
-    console.log(li.length);
-  });
-  console.log(size);
-  res.send(percent);
-  console.log('sent');
+  Review.find({}).then((reviewList) => funcs.getRatings(reviewList))
+    .then((ratingList) => funcs.getPercentageList(ratingList))
+    .then((result) => res.send(result));
 });
 
 app.listen(port, () => {

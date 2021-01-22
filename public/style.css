@@ -646,7 +646,11 @@ a{text-decoration:none;}
   .previous{float:left;}
   .next{float:right;}
 
+  .current {
+    background-color:#f2f2f2;border-color:#f2f2f2;color:#000;cursor:default;
+  }
 
+  
 
 
 

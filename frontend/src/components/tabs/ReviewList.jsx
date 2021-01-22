@@ -5,20 +5,13 @@ import React from 'react';
 import ReviewSingle from './ReviewSingle';
 
 // eslint-disable-next-line react/prop-types
-const ReviewList = ({ list, loading }) => {
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
-  return (
-    <div>
-
-      {list.map((item, index, collection) => (
-        <ReviewSingle item={item} />
-      ))}
-    </div>
-  );
-};
+const ReviewList = ({ list }) => (
+  <div>
+    {list.map((item) => (
+      <ReviewSingle item={item} />
+    ))}
+  </div>
+);
 
 // ReviewList.propTypes = {
 //   loading: propTypes.bool.isRequired,

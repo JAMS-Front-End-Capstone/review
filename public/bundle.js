@@ -6890,13 +6890,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* eslint-disable react/prop-types */
 
 
 var PageNums = function PageNums(_ref) {
   var postsPerPage = _ref.postsPerPage,
       totalPosts = _ref.totalPosts,
-      paginate = _ref.paginate;
+      paginate = _ref.paginate,
+      currentPage = _ref.currentPage;
   var pageNumbers = [];
+
+  var thisPage = function thisPage(num) {
+    if (num === currentPage) {
+      return 'current pageNum';
+    }
+
+    return 'pageNum';
+  };
 
   for (var i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
@@ -6910,7 +6920,7 @@ var PageNums = function PageNums(_ref) {
       onClick: function onClick() {
         return paginate(number);
       },
-      className: "pageNum"
+      className: thisPage(number)
     }, number);
   }));
 };
@@ -6939,21 +6949,31 @@ __webpack_require__.r(__webpack_exports__);
 var Pagenation = function Pagenation(_ref) {
   var postsPerPage = _ref.postsPerPage,
       totalPosts = _ref.totalPosts,
-      paginate = _ref.paginate;
+      paginate = _ref.paginate,
+      currentPage = _ref.currentPage,
+      prev = _ref.prev,
+      next = _ref.next;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenationWrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenation to-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: true,
+    onClick: function onClick() {
+      return prev();
+    },
     className: "previous ui_button secondary"
   }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: true,
+    onClick: function onClick() {
+      return next();
+    },
     className: "next ui_button primary"
   }, "Next"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PageNums__WEBPACK_IMPORTED_MODULE_1__.default, {
     postsPerPage: postsPerPage,
     totalPosts: totalPosts,
-    paginate: paginate
+    paginate: paginate,
+    currentPage: currentPage
   })));
 };
 
@@ -7000,19 +7020,22 @@ var Reviews = function Reviews() {
       ratingList = _useState4[0],
       setRatingList = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState5, 2),
-      loading = _useState6[0],
-      setLoading = _useState6[1];
+      currentPage = _useState6[0],
+      setCurrentPage = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
-      _useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState7, 2),
-      currentPage = _useState8[0],
-      setCurrentPage = _useState8[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(5),
+      _useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState7, 1),
+      postsPerPage = _useState8[0];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(5),
-      _useState10 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState9, 1),
-      postsPerPage = _useState10[0];
+  var indexOfLastPost = currentPage * postsPerPage;
+  var indexOfFirstPost = indexOfLastPost - postsPerPage;
+  var currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
+
+  var paginate = function paginate(pageNumber) {
+    return setCurrentPage(pageNumber);
+  };
 
   var getReviews = function getReviews() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/reviews').then(function (res) {
@@ -7024,6 +7047,18 @@ var Reviews = function Reviews() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/ratings').then(function (ratings) {
       setRatingList(ratings.data);
     });
+  };
+
+  var next = function next() {
+    if (indexOfLastPost !== reviews.length) {
+      paginate(currentPage + 1);
+    }
+  };
+
+  var prev = function prev() {
+    if (currentPage !== 1) {
+      paginate(currentPage - 1);
+    }
   }; // const get = async () => {
   //   setLoading(true);
   //   const res = await axios.get('/api/reviews');
@@ -7036,14 +7071,6 @@ var Reviews = function Reviews() {
     getRatings();
     getReviews();
   }, []);
-  var indexOfLastPost = currentPage * postsPerPage;
-  var indexOfFirstPost = indexOfLastPost - postsPerPage;
-  var currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
-
-  var paginate = function paginate(pageNumber) {
-    return setCurrentPage(pageNumber);
-  };
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
@@ -7052,12 +7079,14 @@ var Reviews = function Reviews() {
     total: reviews.length
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_WriteReview__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_TabReview__WEBPACK_IMPORTED_MODULE_5__.default, {
     ratings: ratingList,
-    list: currentPosts,
-    loading: loading
+    list: currentPosts
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Pagenation__WEBPACK_IMPORTED_MODULE_6__.default, {
     postsPerPage: postsPerPage,
     totalPosts: reviews.length,
-    paginate: paginate
+    paginate: paginate,
+    currentPage: currentPage,
+    prev: prev,
+    next: next
   })));
 };
 
@@ -7090,21 +7119,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var TabReview = function TabReview(_ref) {
   var ratings = _ref.ratings,
-      list = _ref.list,
-      loading = _ref.loading;
+      list = _ref.list;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "reviewTabs"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_Summary__WEBPACK_IMPORTED_MODULE_2__.default, {
     ratings: ratings
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_SearchBar__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_ReviewList__WEBPACK_IMPORTED_MODULE_4__.default, {
-    list: list,
-    loading: loading
+    list: list
   })));
 };
 
 TabReview.propTypes = {
-  ratings: prop_types__WEBPACK_IMPORTED_MODULE_1___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)).isRequired,
-  loading: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool.isRequired)
+  ratings: prop_types__WEBPACK_IMPORTED_MODULE_1___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TabReview);
 
@@ -7172,14 +7198,8 @@ __webpack_require__.r(__webpack_exports__);
  // eslint-disable-next-line react/prop-types
 
 var ReviewList = function ReviewList(_ref) {
-  var list = _ref.list,
-      loading = _ref.loading;
-
-  if (loading) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Loading...");
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, list.map(function (item, index, collection) {
+  var list = _ref.list;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, list.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewSingle__WEBPACK_IMPORTED_MODULE_1__.default, {
       item: item
     });
