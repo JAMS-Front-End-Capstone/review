@@ -256,20 +256,57 @@ a{text-decoration:none;}
   box-sizing:border-box;
   color:#fff;
   font-size:14px;line-height:18px;
-  margin-left:1px;padding:8px 10px;}
+  margin-left:1px;padding:8px 10px;
+}
 
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
-.ui_icon.ui_icon:before{text-decoration:none;}
-.ui_icon.caret-down:before{content:"\e04a";}
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
-.ui_icon.ui_icon:before{text-decoration:none;}
+.ui_icon:before {
+  display:inline-block;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  font-size:inherit;
+  line-height:1;
+} 
+.ui_icon.ui_icon:before{
+  text-decoration:none;
+}
+.ui_icon.caret-down:before{
+  content:"\e04a";
+}
 
-.ui_checkbox label{position:relative;cursor:pointer;display:inline-block;}
-.ui_checkbox label:before{position:absolute;top:0;left:0;width:1em;height:1em;background-color:#fff;border:1px solid #000;border-radius:2px;box-shadow:inset 0 0 2px rgba(0,0,0,.1);font:normal 700 normal 1em/1 TripAdvisor_Regular;color:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"";}
+.ui_icon.ui_icon:before{
+  text-decoration:none;
+}
+
+.ui_checkbox label{
+  position:relative;
+  cursor:pointer;
+  display:inline-block;
+}
+.ui_checkbox label:before{
+  position:absolute;
+  top:0;
+  left:0;
+  width:1em;
+  height:1em;
+  background-color:#fff;
+  border:1px solid #000;
+  border-radius:2px;
+  box-shadow:inset 0 0 2px rgba(0,0,0,.1);
+  font:normal 700 normal 1em/1 TripAdvisor_Regular;
+  color:#fff;
+  content:"";
+}
 .ui_checkbox input{display:none;}
-.ui_checkbox input:checked+label:before{background-color:#000;content:"\e02b";}
+.ui_checkbox input:checked+label:before{
+  background-color:#000;
+  content:"\e02b";
+}
 .ui_checkbox{display:inline-block;}
-.ui_checkbox label{padding-left:24px;box-sizing:content-box;}
+.ui_checkbox label{
+  padding-left:24px;
+  box-sizing:content-box;
+}
 .ui_checkbox+.ui_checkbox{margin-left:1rem;}
 
 .ui_columns{margin-left:-12px;margin-right:-12px;box-sizing:border-box;}
@@ -282,9 +319,20 @@ a{text-decoration:none;}
 .ui_column{display:block;-webkit-flex-basis:0;flex-basis:0;-webkit-flex-grow:1;flex-grow:1;-webkit-flex-shrink:1;flex-shrink:1;padding:12px;box-sizing:border-box;}
 
 .ui_radio label{position:relative;}
-.ui_radio label:before{position:absolute;top:-1px;left:1px;width:15px;height:15px;background-color:#fff;border:1px solid #8c8c8c;border-radius:100%;box-shadow:inset 0 0 2px rgba(0,0,0,.1);font:normal normal normal 1em/1 TripAdvisor_Regular;font-size:11px;line-height:15px;text-indent:2px;color:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"";}
+.ui_radio label:before{
+  position:absolute;
+  top:-1px;left:1px;width:15px;height:15px;background-color:#fff;
+  border:1px solid #8c8c8c;
+  border-radius:100%;
+  box-shadow:inset 0 0 2px rgba(0,0,0,.1);
+  font:normal normal normal 1em/1 TripAdvisor_Regular;font-size:11px;
+  line-height:15px;text-indent:2px;color:#fff;content:"";
+}
 .ui_radio input{display:none;}
-.ui_radio input:checked+label:before{color:#004f32;content:"\e00a";speak:none;font-size:12px;}
+.ui_radio input:checked+label:before{
+  color:#004f32;
+  content:"\e00a";
+  font-size:12px;}
 .ui_radio {
   display:inline-block;
 }
@@ -437,9 +485,9 @@ a{text-decoration:none;}
   color:#8c8c8c;
 }
 
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;text-decoration:underline;}
+.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
 .ui_icon.ui_icon:before{text-decoration:none;}
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;text-decoration:underline;}
+.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
 .ui_icon.ui_icon:before{text-decoration:none;}
 .ui_icon.search:before{content:"\e056";}
 
@@ -455,10 +503,10 @@ a{text-decoration:none;}
 .middle{box-sizing:border-box;padding:12px;font-size:14px;font-family:inherit;border:1px solid black ;border-radius:2px;}
 .middle:focus{border-color:black;outline:1px solid black;}
 
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;text-decoration:underline;}
+.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
 .ui_icon.ui_icon:before{text-decoration:none;}
 .ui_icon.caret-down:before{content:"\e04a";}
-.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;text-decoration:underline;}
+.ui_icon:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:underline;}
 .ui_icon.ui_icon:before{text-decoration:none;}
 .ui_icon.map-pin-fill:before{content:"\e01a";}
 .ui_icon.share:before{content:"\e09a";}
@@ -468,7 +516,7 @@ img{border:0;}
 q:after,q:before{content:"";}
 a{text-decoration:none;}
 .ui_bubble_rating{display:inline-block;position:relative;}
-.ui_bubble_rating:after,.ui_bubble_rating:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;font-family:TripAdvisor_Regular!important;-ms-transform:rotate(-.001deg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;speak:none;}
+.ui_bubble_rating:after,.ui_bubble_rating:before{display:inline-block;font-style:normal;font-weight:400;font-variant:normal;font-size:inherit;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 
 .ui_bubble_rating:before{color:#fff;display:block;content:"\e00a\e00a\e00a\e00a\e00a";}
 .ui_bubble_rating:after{position:absolute;top:0;left:0;color:#00aa6c;}
@@ -493,125 +541,125 @@ a{text-decoration:none;}
 }
 .ui_link:focus{color:#474747;text-decoration:underline;outline:none;}
 .ui_link:visited{color:#474747;text-decoration:none;}
-/*! CSS Used from: https://static.tacdn.com/assets/OMqGt0.a0d9ebab.css */
+
 ._2HBN-k68{display:inline-block;vertical-align:bottom;}
 ._2JndpOur{fill:currentColor;}
-/*! CSS Used from: https://static.tacdn.com/assets/Hgrhyo.365918b2.css */
+
 ._3x5_awTA{display:block;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}
-/*! CSS Used from: https://static.tacdn.com/assets/ui0Mdg.8516faed.css */
-._1k12Q93K{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;cursor:pointer;}
-._1k12Q93K ._3g9oGli4{margin-right:4px;font-size:20px;color:#bababa;}
-._1k12Q93K ._3p1vOjv8{font-weight:700;font-size:12px;line-height:20px;color:#000;}
+
+.UserShareMin{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;cursor:pointer;}
+.UserShareMin .UserShareicon{margin-right:4px;font-size:20px;color:#bababa;}
+.UserShareMin .UserSharemid{font-weight:700;font-size:12px;line-height:20px;color:#000;}
 @media (min-width:768px){
-._1k12Q93K:hover ._3g9oGli4{color:#000;}
-._1k12Q93K:hover ._3p1vOjv8{text-decoration:underline;}
+.UserShareMin:hover .UserShareicon{color:#000;}
+.UserShareMin:hover .UserSharemid{text-decoration:underline;}
 }
-/*! CSS Used from: https://static.tacdn.com/assets/QmAjD5.a8e12b75.css */
-._3hDPbqWO{font-size:14px;padding:0 16px;margin-top:5px;}
+
+.userBody{font-size:14px;padding:0 16px;margin-top:5px;}
 @media (min-width:768px){
-._3hDPbqWO{padding:0 24px;}
+.userBody{padding:0 24px;}
 }
-.IRsGHoPm{color:#474747;font-size:16px;line-height:20px;word-wrap:break-word;}
+.userBodyy{color:#474747;font-size:16px;line-height:20px;word-wrap:break-word;}
 .XUVJZtom{margin:6px 0 12px;}
 ._3maEfNCR{cursor:pointer;color:#8c8c8c;border:solid #e0e0e0;border-width:0 0 1px;}
 ._3aUwQbpX{margin-left:4px;}
-.nf9vGX55{padding:8px 16px 0;-webkit-flex:1;-ms-flex:1;flex:1;}
+.reviewRate{padding:8px 16px 0;-webkit-flex:1;-ms-flex:1;flex:1;}
 @media (min-width:768px){
-.nf9vGX55{padding:12px 24px 0;}
+.reviewRate{padding:12px 24px 0;}
 }
-._2UEC-y30{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;}
+.UserRatingSub{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;}
 @media (max-width:767px){
-._2UEC-y30{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;}
+.UserRatingSub{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;}
 }
-.oETBfkHU{position:relative;margin:0 -16px;background:#fff;}
+.UserRating{position:relative;margin:0 -16px;background:#fff;}
 @media (min-width:768px){
-.oETBfkHU{margin:0 -24px;}
+.UserRating{margin:0 -24px;}
 }
-.glasR4aX{margin-top:8px;margin-bottom:8px;padding:0 16px;cursor:pointer;font-weight:700;font-size:18px;line-height:22px;color:#000;word-wrap:break-word;}
+.reviewTitle{margin-top:8px;margin-bottom:8px;padding:0 16px;cursor:pointer;font-weight:700;font-size:18px;line-height:22px;color:#000;word-wrap:break-word;}
 @media (max-width:767px){
-.glasR4aX{margin-top:10px;}
+.reviewTitle{margin-top:10px;}
 }
 @media (min-width:768px){
-.glasR4aX{width:calc(100% - 182px);padding:0 24px;}
+.reviewTitle{width:calc(100% - 182px);padding:0 24px;}
 }
 .ocfR3SKN,.ocfR3SKN:active,.ocfR3SKN:visited{color:#000;}
-._34Xs-BQm{display:block;margin-top:12px;font-size:14px;line-height:18px;color:#000;}
-._34Xs-BQm ._355y0nZn{font-weight:700;}
-/*! CSS Used from: https://static.tacdn.com/assets/T9pBQS.e817b2ee.css */
-._3d_mZXGr{margin:0 -16px;padding:0 16px 16px;background:#fff;}
+.userTimeTravMin{display:block;margin-top:12px;font-size:14px;line-height:18px;color:#000;}
+.userTimeTravMin .userTimeTravB{font-weight:700;}
+
+.userHelp{margin:0 -16px;padding:0 16px 16px;background:#fff;}
 @media (min-width:768px){
-._3d_mZXGr{margin:0 -24px;padding:0 24px 12px;}
+.userHelp{margin:0 -24px;padding:0 24px 12px;}
 }
-._3d_mZXGr:last-child{padding-bottom:0;}
-/*! CSS Used from: https://static.tacdn.com/assets/WWE3W5.bc8b740c.css */
-._310S4sqz{margin-bottom:12px;zoom:1;}
-._310S4sqz:after,._310S4sqz:before{content:" ";display:table;}
-._310S4sqz:after{clear:both;}
-._310S4sqz .ui_social_avatar{margin:-3px 8px 0 -3px;float:left;}
-._3TMaHs5O{display:-webkit-flex;display:-ms-flexbox;display:flex;margin:-2px 0 0 12px;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;float:right;}
-._1r_My98y:active,._1r_My98y:hover{text-decoration:underline;}
-._1r_My98y.ui_header_link{font-weight:700;color:#000;}
+.userHelp:last-child{padding-bottom:0;}
+
+.minorReviewsingle{margin-bottom:12px;zoom:1;}
+.minorReviewsingle:after,.minorReviewsingle:before{content:" ";display:table;}
+.minorReviewsingle:after{clear:both;}
+.minorReviewsingle .ui_social_avatar{margin:-3px 8px 0 -3px;float:left;}
+.bubbleMinor{display:-webkit-flex;display:-ms-flexbox;display:flex;margin:-2px 0 0 12px;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;float:right;}
+.userHeader:active,.userHeader:hover{text-decoration:underline;}
+.userHeader.ui_header_link{font-weight:700;color:#000;}
 @media (max-width:767px){
-._1r_My98y.ui_header_link{display:block;}
+.userHeader.ui_header_link{display:block;}
 }
-._2uYWQXeO,._2uYWQXeO ._2fxQ4TOx{height:100%;overflow:hidden;}
-._2uYWQXeO ._2fxQ4TOx{padding-bottom:2px;font-size:14px;line-height:18px;color:#474747;}
-._2uYWQXeO .overflow{margin-top:-2px;float:right;}
-/*! CSS Used from: https://static.tacdn.com/assets/miRpRf.96a44839.css */
-._2f_ruteS,.cPQsENeY{position:relative;}
-._2uD5bLZZ .cPQsENeY{overflow:hidden;}
-._1bona3Pu ._36B4Vw6t{display:none;}
-._2uD5bLZZ ._36B4Vw6t{display:inline-block;}
-/*! CSS Used from: https://static.tacdn.com/assets/3fnomI.24854ee0.css */
-._1EpRX7o3 ._1TuWwpYf{font-size:12px;line-height:16px;}
-._1EpRX7o3 ._1TuWwpYf{color:#8c8c8c;}
+.bubbleMain,.bubbleMain .userMain{height:100%;overflow:hidden;}
+.bubbleMain .userMain{padding-bottom:2px;font-size:14px;line-height:18px;color:#474747;}
+.bubbleMain .overflow{margin-top:-2px;float:right;}
+
+.userBodySub,.userBodyWrap{position:relative;}
+.userBodySubLas .userBodyWrap{overflow:hidden;}
+.userBodySubMid ._36B4Vw6t{display:none;}
+.userBodySubLas ._36B4Vw6t{display:inline-block;}
+
+.userLoca .userLocaSub{font-size:12px;line-height:16px;}
+.userLoca .userLocaSub{color:#8c8c8c;}
 @media (min-width:768px){
-._1EpRX7o3 ._1TuWwpYf+._3fPsSAYi:before{content:"\A0\2022\A0";}
+.userLoca .userLocaSub+.userContri:before{content:"\A0\2022\A0";}
 }
 @media (max-width:767px){
-._1EpRX7o3 ._1TuWwpYf{display:block;}
+.userLoca .userLocaSub{display:block;}
 }
-._1EpRX7o3 ._3fPsSAYi{font-size:12px;line-height:16px;color:#8c8c8c;display:inline-block;}
-._1EpRX7o3 ._3fPsSAYi+._3fPsSAYi:before{content:"\A0\2022\A0";}
-._1EpRX7o3 ._1fk70GUn{font-weight:700;color:#8c8c8c;}
-/*! CSS Used from: https://static.tacdn.com/assets/zrL722.9c0e0a1c.css */
-._2lqOQqh3{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;cursor:pointer;}
-._2lqOQqh3:not(:last-child){margin-right:20px;}
-._2lqOQqh3 .Ak8Bi3Zf{margin-right:4px;font-size:20px;color:#bababa;}
-._2lqOQqh3 ._1Dl3N9MC{font-weight:700;font-size:12px;line-height:20px;color:#000;}
+.userLoca .userContri{font-size:12px;line-height:16px;color:#8c8c8c;display:inline-block;}
+.userLoca .userContri+.userContri:before{content:"\A0\2022\A0";}
+.userLoca .userContriSub{font-weight:700;color:#8c8c8c;}
+
+.uHelpful{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;cursor:pointer;}
+.uHelpful:not(:last-child){margin-right:20px;}
+.uHelpful .iconlast{margin-right:4px;font-size:20px;color:#bababa;}
+.uHelpful .link{font-weight:700;font-size:12px;line-height:20px;color:#000;}
 @media (min-width:768px){
-._2lqOQqh3:hover .Ak8Bi3Zf{color:#000;}
-._2lqOQqh3:hover ._1Dl3N9MC{text-decoration:underline;}
+.uHelpful:hover .iconlast{color:#000;}
+.uHelpful:hover .link{text-decoration:underline;}
 }
-._331VZDkq{display:-webkit-flex;display:-ms-flexbox;display:flex;}
+.UserShareMain{display:-webkit-flex;display:-ms-flexbox;display:flex;}
 @media (max-width:767px){
-._331VZDkq{margin-right:-4px;}
-._331VZDkq .socialCTA{display:none;}
+.UserShareMain{margin-right:-4px;}
+.UserShareMain .socialCTA{display:none;}
 }
-._3SZRHJHk{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;margin-top:12px;box-sizing:border-box;}
+.userHelpdiv{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;margin-top:12px;box-sizing:border-box;}
 @media (max-width:767px){
-._3SZRHJHk{-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
+.userHelpdiv{-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
 }
-/*! CSS Used from: https://static.tacdn.com/assets/ce1YGz.3e4e3456.css */
-._3V8URHDq{float:right;}
-/*! CSS Used from: https://static.tacdn.com/assets/lQWUxH.c87a3406.css */
-.T870kzTX{margin-bottom:12px;}
-.Dq9MAugU{background-color:#fff;box-sizing:border-box;}
-.Dq9MAugU.LnVzGwUB{padding:16px 16px 12px;}
+
+.circle{float:right;}
+
+.middeSinglekzTX{margin-bottom:12px;}
+.mainReviwSingleAugU{background-color:#fff;box-sizing:border-box;}
+.mainReviwSingleAugU.lastSingle{padding:16px 16px 12px;}
 @media (min-width:768px){
-.Dq9MAugU.LnVzGwUB{padding:16px 24px 12px;}
+.mainReviwSingleAugU.lastSingle{padding:16px 24px 12px;}
 }
-/*! CSS Used from: https://static.tacdn.com/assets/u-66yY/K6n6GC.04e8829e.css */
-._27JpaCjl{padding-bottom:12px;}
-/*! CSS Used from: https://static.tacdn.com/assets/jLmCNP.5a103493.css */
-._3-zQ1eyd{margin-left:12px;font-size:24px;cursor:pointer;}
+
+.userTimeTrav{padding-bottom:12px;}
+
+.circleFront{margin-left:12px;font-size:24px;cursor:pointer;}
 @media (min-width:768px){
-._3-zQ1eyd:hover{color:var(--bubbleIcon);}
+.circleFront:hover{color:var(--bubbleIcon);}
 }
-._3-zQ1eyd._3LR9XvrV{color:var(--primaryIcon);}
-/*! CSS Used from: https://static.tacdn.com/assets/Ac9jMZ.3ef0cac9.css */
-._3UnecFwl{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;height:0;opacity:0;transition:height .15s ease-in,padding-bottom .15s ease-in,padding-top .15s ease-in,opacity .15s ease-in;}
-/*! CSS Used from: https://static.tacdn.com/assets/_RYn2L.c9d82846.css */
+.circleFront.circleBack{color:var(--primaryIcon);}
+
+.userHelpMin{display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;height:0;opacity:0;transition:height .15s ease-in,padding-bottom .15s ease-in,padding-top .15s ease-in,opacity .15s ease-in;}
+
 ._3J15flPT ._2kj8kWkW{margin-right:4px;font-size:16px;}
 ._3J15flPT.small{margin:0;font-size:12px;line-height:16px;}
 ._3J15flPT.small ._2kj8kWkW{position:relative;top:-1px;margin-right:0;font-size:12px;}

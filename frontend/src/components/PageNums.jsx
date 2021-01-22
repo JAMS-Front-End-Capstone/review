@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 import React from 'react';
 

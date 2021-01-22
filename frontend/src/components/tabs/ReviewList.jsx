@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-//import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 
 import ReviewSingle from './ReviewSingle';
 
