@@ -1,13 +1,20 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import ReviewSingle from './ReviewSingle.jsx';
+// import propTypes from 'prop-types';
 
-const  ReviewList = () => {
-  return (  
-    <div>
-      <h2>ReviewList</h2>
-      <ReviewSingle />
-    </div>
-  );
-}
- 
+import ReviewSingle from './ReviewSingle';
+
+// eslint-disable-next-line react/prop-types
+const ReviewList = ({ list }) => (
+  <div>
+    {list.map((item) => (
+      <ReviewSingle item={item} />
+    ))}
+  </div>
+);
+
+// ReviewList.propTypes = {
+//   loading: propTypes.bool.isRequired,
+
+// };
 export default ReviewList;

@@ -1,21 +1,24 @@
 import React from 'react';
-import Summary from './tabs/Summary.jsx';
-import SearchBar from './tabs/SearchBar.jsx';
-import ReviewList from './tabs/ReviewList.jsx';
+import propTypes from 'prop-types';
+import Summary from './tabs/Summary';
+import SearchBar from './tabs/SearchBar';
+import ReviewList from './tabs/ReviewList';
 
+// eslint-disable-next-line react/prop-types
+const TabReview = ({ ratings, list }) => (
 
-
-
-
-const  TabReview = () => {
-  return (  
+  <div className="reviewTabs">
     <div>
-      <h1>TabReview</h1>
-      < Summary />
-      < SearchBar />
-      < ReviewList />
+      <Summary ratings={ratings} />
+      <SearchBar />
+      <ReviewList list={list} />
     </div>
-  );
-}
- 
+  </div>
+
+);
+
+TabReview.propTypes = {
+  ratings: propTypes.arrayOf(propTypes.number).isRequired,
+
+};
 export default TabReview;

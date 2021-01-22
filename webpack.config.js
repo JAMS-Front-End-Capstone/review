@@ -1,14 +1,15 @@
 const path = require('path');
+// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
+
 const SRC_DIR = path.join(__dirname, './frontend/src');
 const DIST_DIR = path.join(__dirname, './public');
 
 module.exports = {
-  mode: 'development',
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',
-    path: DIST_DIR
+    path: DIST_DIR,
   },
   module: {
     rules: [
@@ -18,14 +19,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }       
-        },        
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [
+              '@babel/plugin-transform-runtime'],
+          },
+        },
       },
-    ]
+    ],
   },
-  devServer: {
-    inline: false,
-    contentBase: path.join(__dirname, '../public')
+  // devServer: {
+  //   inline: false,
+  //   contentBase: path.join(__dirname, '../public'),
+  // },
+  mode: 'development',
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
