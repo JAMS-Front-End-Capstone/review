@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-plusplus */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
@@ -19,7 +20,7 @@ const PageNums = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   return (
     <div className="pageNumbers">
       {pageNumbers.map((number) => (
-        <a href onClick={() => paginate(number)} className={thisPage(number)}>{number}</a>
+        <a onClick={() => paginate(number)} className={thisPage(number)}>{number}</a>
       ))}
     </div>
   );

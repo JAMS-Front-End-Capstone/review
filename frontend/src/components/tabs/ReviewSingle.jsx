@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
@@ -14,7 +15,7 @@ function ReviewSingle({ item }) {
   return (
     <div className="mainReviwSingleAugU middeSinglekzTX lastSingle">
       <div className="minorReviewsingle">
-        <a href className="_3x5_awTA ui_social_avatar inline">
+        <a href="" className="_3x5_awTA ui_social_avatar inline">
           <img alt="" src="https://picsum.photos/seed/picsum/200/300" />
         </a>
         <div className="bubbleMain">
@@ -30,7 +31,7 @@ function ReviewSingle({ item }) {
           </div>
           <div className="userMain">
             <span>
-              <a className="ui_header_link userHeader" href="/Profile/RomarDelta">
+              <a className="ui_header_link userHeader" href="">
                 {item.user.name}
               </a>
               {` wrote a review ${item.reviewDate} 2019`}

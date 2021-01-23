@@ -6890,6 +6890,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 /* eslint-disable no-plusplus */
 
 /* eslint-disable object-curly-newline */
@@ -6920,7 +6922,6 @@ var PageNums = function PageNums(_ref) {
     className: "pageNumbers"
   }, pageNumbers.map(function (number) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      href: true,
       onClick: function onClick() {
         return paginate(number);
       },
@@ -6946,6 +6947,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _PageNums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PageNums */ "./frontend/src/components/PageNums.jsx");
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 /* eslint-disable object-curly-newline */
 
 /* eslint-disable react/prop-types */
@@ -6964,13 +6967,13 @@ var Pagenation = function Pagenation(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenation to-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: true,
+    href: "",
     onClick: function onClick() {
       return prev();
     },
     className: "previous ui_button secondary"
   }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: true,
+    href: "",
     onClick: function onClick() {
       return next();
     },
@@ -7154,6 +7157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 
 var WriteReview = function WriteReview() {
@@ -7172,7 +7176,7 @@ var WriteReview = function WriteReview() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "writeReview"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: true,
+    href: "",
     className: "ui_button primary war-button"
   }, "Write a review")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "dropDownBox"
@@ -7231,6 +7235,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 /* eslint-disable react/prop-types */
 
 
@@ -7244,7 +7250,7 @@ function ReviewSingle(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "minorReviewsingle"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: true,
+    href: "",
     className: "_3x5_awTA ui_social_avatar inline"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     alt: "",
@@ -7280,7 +7286,7 @@ function ReviewSingle(_ref) {
     className: "userMain"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "ui_header_link userHeader",
-    href: "/Profile/RomarDelta"
+    href: ""
   }, item.user.name), " wrote a review ".concat(item.reviewDate, " 2019"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "userLoca"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
