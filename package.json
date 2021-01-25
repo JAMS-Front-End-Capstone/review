@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "server": "nodemon backend/index.js",
-    "client": "webpack --watch -d source-map"
+    "client": "webpack --watch -d source-map",
+    "seed": "node database/seed.js",
   },
   "author": "",
   "license": "ISC",
