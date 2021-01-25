@@ -5,11 +5,11 @@ import SearchBar from './tabs/SearchBar';
 import ReviewList from './tabs/ReviewList';
 
 // eslint-disable-next-line react/prop-types
-const TabReview = ({ ratings, list }) => (
+const TabReview = ({ ratings, list, rateArray }) => (
 
   <div className="reviewTabs">
     <div>
-      <Summary ratings={ratings} />
+      <Summary ratings={ratings} rateArray={rateArray} />
       <SearchBar />
       <ReviewList list={list} />
     </div>

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
@@ -8,8 +10,8 @@ const Pagenation = ({ postsPerPage, totalPosts, paginate, currentPage, prev, nex
 
   <div className="pagenationWrapper">
     <div className="pagenation to-center">
-      <a href="" onClick={() => prev()} className="previous ui_button secondary">Previous</a>
-      <a href="" onClick={() => next()} className="next ui_button primary">Next</a>
+      <a onClick={() => prev()} className="previous ui_button secondary">Previous</a>
+      <a onClick={() => next()} className="next ui_button primary">Next</a>
       <PageNums
         postsPerPage={postsPerPage}
         totalPosts={totalPosts}

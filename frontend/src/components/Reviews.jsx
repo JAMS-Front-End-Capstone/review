@@ -4,6 +4,7 @@ import Menu from './Menu';
 import WriteReview from './WriteReview';
 import TabReview from './TabReview';
 import Pagenation from './Pagenation';
+import { rateArray } from './data';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -40,23 +41,22 @@ const Reviews = () => {
       paginate(currentPage - 1);
     }
   };
-  // const get = async () => {
-  //   setLoading(true);
-  //   const res = await axios.get('/api/reviews');
-  //   setList(res.data);
-  //   setLoading(false);
-  // };
 
   useEffect(() => {
     getRatings();
     getReviews();
   }, []);
+
   return (
     <div className="wrapper">
       <div className="mainReview">
         <Menu total={reviews.length} />
         <WriteReview />
-        <TabReview ratings={ratingList} list={currentPosts} />
+        <TabReview
+          ratings={ratingList}
+          list={currentPosts}
+          rateArray={rateArray}
+        />
         <Pagenation
           postsPerPage={postsPerPage}
           totalPosts={reviews.length}
