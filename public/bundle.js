@@ -35,6 +35,22 @@ module.exports = _arrayWithHoles;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
@@ -558,6 +574,20 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
@@ -609,6 +639,20 @@ module.exports = _nonIterableRest;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/***/ ((module) => {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
@@ -628,6 +672,28 @@ function _slicedToArray(arr, i) {
 }
 
 module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
 
 /***/ }),
 
@@ -6890,6 +6956,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 /* eslint-disable no-plusplus */
@@ -6947,6 +7017,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _PageNums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PageNums */ "./frontend/src/components/PageNums.jsx");
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 /* eslint-disable object-curly-newline */
@@ -6967,13 +7041,11 @@ var Pagenation = function Pagenation(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagenation to-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "",
     onClick: function onClick() {
       return prev();
     },
     className: "previous ui_button secondary"
   }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "",
     onClick: function onClick() {
       return next();
     },
@@ -7010,6 +7082,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WriteReview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WriteReview */ "./frontend/src/components/WriteReview.jsx");
 /* harmony import */ var _TabReview__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TabReview */ "./frontend/src/components/TabReview.jsx");
 /* harmony import */ var _Pagenation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Pagenation */ "./frontend/src/components/Pagenation.jsx");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./data */ "./frontend/src/components/data.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_data__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -7068,13 +7143,7 @@ var Reviews = function Reviews() {
     if (currentPage !== 1) {
       paginate(currentPage - 1);
     }
-  }; // const get = async () => {
-  //   setLoading(true);
-  //   const res = await axios.get('/api/reviews');
-  //   setList(res.data);
-  //   setLoading(false);
-  // };
-
+  };
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     getRatings();
@@ -7088,7 +7157,8 @@ var Reviews = function Reviews() {
     total: reviews.length
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_WriteReview__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_TabReview__WEBPACK_IMPORTED_MODULE_5__.default, {
     ratings: ratingList,
-    list: currentPosts
+    list: currentPosts,
+    rateArray: _data__WEBPACK_IMPORTED_MODULE_7__.rateArray
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Pagenation__WEBPACK_IMPORTED_MODULE_6__.default, {
     postsPerPage: postsPerPage,
     totalPosts: reviews.length,
@@ -7128,11 +7198,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var TabReview = function TabReview(_ref) {
   var ratings = _ref.ratings,
-      list = _ref.list;
+      list = _ref.list,
+      rateArray = _ref.rateArray;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "reviewTabs"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_Summary__WEBPACK_IMPORTED_MODULE_2__.default, {
-    ratings: ratings
+    ratings: ratings,
+    rateArray: rateArray
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_SearchBar__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs_ReviewList__WEBPACK_IMPORTED_MODULE_4__.default, {
     list: list
   })));
@@ -7186,6 +7258,34 @@ var WriteReview = function WriteReview() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WriteReview);
+
+/***/ }),
+
+/***/ "./frontend/src/components/data.js":
+/*!*****************************************!*\
+  !*** ./frontend/src/components/data.js ***!
+  \*****************************************/
+/***/ ((module) => {
+
+var rateArray = [{
+  id: 5,
+  name: 'Excellent'
+}, {
+  id: 4,
+  name: 'Very Good'
+}, {
+  id: 3,
+  name: 'Average'
+}, {
+  id: 2,
+  name: 'Poor'
+}, {
+  id: 1,
+  name: 'Terrible'
+}];
+module.exports = {
+  rateArray: rateArray
+};
 
 /***/ }),
 
@@ -7398,279 +7498,154 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+/* eslint-disable no-unneeded-ternary */
+
+/* eslint-disable react/prop-types */
+
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 
 
 var Summary = function Summary(_ref) {
-  var ratings = _ref.ratings;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  var ratings = _ref.ratings,
+      rateArray = _ref.rateArray;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState, 2),
+      Checked = _useState2[0],
+      setChecked = _useState2[1];
+
+  var reviewId = ['ReviewRatingFilter_5', 'ReviewRatingFilter_4', 'ReviewRatingFilter_3', 'ReviewRatingFilter_2', 'ReviewRatingFilter_1'];
+
+  var handleclick = function handleclick(input) {
+    var currentIndex = Checked.indexOf(input);
+
+    var newChecked = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Checked);
+
+    if (currentIndex === -1) {
+      newChecked.push(input);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
+
+  var travelRatings = ratings.slice(0, 5).map(function (rating, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("li", {
+      className: "ui_checkbox _3gEj_Jb5",
+      key: reviewId[index]
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+      type: "checkbox",
+      id: reviewId[index],
+      value: index,
+      onClick: function onClick() {
+        return handleclick(rateArray[index].id);
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+      htmlFor: reviewId[index],
+      className: "classified class_end"
+    }, rateArray[index].name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("span", {
+      className: "ratingStick"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("span", {
+      className: "fullBar"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("span", {
+      className: "percentBar",
+      style: {
+        width: "".concat(ratings[index], "%")
+      }
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("span", {
+      className: "ratingNum"
+    }, ratings[index + 5]));
+  });
+  var typeNames = ['Family', 'Couples', 'Solo', 'Business', 'Friends'];
+  var typeFilter = ['TravelTypeFilter_0', 'TravelTypeFilter_1', 'TravelTypeFilter_2', 'TravelTypeFilter_3', 'TravelTypeFilter_4', 'TravelTypeFilter_5'];
+  var travelTypes = typeNames.map(function (typeName, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("li", {
+      className: "ui_checkbox _3gEj_Jb5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+      type: "checkbox",
+      id: typeFilter[index],
+      value: typeNames[index]
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+      htmlFor: typeFilter[index],
+      className: "classified"
+    }, typeNames[index]));
+  });
+  var travelMonths = ['Mar-May', 'Jun-Aug', 'Sep-Nov', 'Dec-Feb'];
+  var timeFilter = ['TravelTimeFilter_0', 'TravelTimeFilter_1', 'TravelTimeFilter_2', 'TravelTimeFilter_3'];
+  var travelTimes = travelMonths.map(function (travelMonth, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("li", {
+      className: "ui_checkbox _3gEj_Jb5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+      type: "checkbox",
+      id: timeFilter[index],
+      value: index
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+      htmlFor: timeFilter[index],
+      className: "classified"
+    }, travelMonths[index]));
+  });
+  var langTypes = ['All languages', 'French', 'English', 'Spanish'];
+  var langFilter = ['LanguageFilter_0', 'LanguageFilter_1', 'LanguageFilter_2', 'LanguageFilter_3'];
+  var travelLangs = langTypes.map(function (travelLan, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("li", {
+      className: "ui_radio _3gEj_Jb5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+      type: "radio",
+      id: langFilter[index],
+      value: langTypes[index],
+      name: "langu"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+      htmlFor: langFilter[index],
+      className: "languageOption"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("span", {
+      className: "lang"
+    }, langTypes[index])));
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "firstComponent"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "ui_columns"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "ui_column is-5 is-12-mobile"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "travelerRating"
-  }, "Traveler Rating"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }, "Traveler Rating"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("ul", {
     className: "ratingBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "ReviewRatingFilter_5",
-    value: "5"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "ReviewRatingFilter_5",
-    className: "classified class_end"
-  }, "Excellent"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingStick"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "fullBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "percentBar",
-    style: {
-      width: "".concat(ratings[0], "%")
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingNum"
-  }, ratings[5])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "ReviewRatingFilter_4",
-    value: "4"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "ReviewRatingFilter_4",
-    className: "classified class_end"
-  }, "Very Good"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingStick"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "fullBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "percentBar",
-    style: {
-      width: "".concat(ratings[1], "%")
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingNum"
-  }, ratings[6])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "ReviewRatingFilter_3",
-    value: "3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "ReviewRatingFilter_3",
-    className: "classified class_end"
-  }, "Average"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingStick"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "fullBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "percentBar",
-    style: {
-      width: "".concat(ratings[2], "%")
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingNum"
-  }, ratings[7])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "ReviewRatingFilter_2",
-    value: "2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "ReviewRatingFilter_2",
-    className: "classified class_end"
-  }, "Poor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingStick"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "fullBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "percentBar",
-    style: {
-      width: "".concat(ratings[3], "%")
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingNum"
-  }, ratings[8])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "ReviewRatingFilter_1",
-    value: "1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "ReviewRatingFilter_1",
-    className: "classified class_end"
-  }, "Terrible"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingStick"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "fullBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "percentBar",
-    style: {
-      width: "".concat(ratings[4], "%")
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "ratingNum"
-  }, ratings[9])))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, travelRatings)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "ui_column  is-shown-at-tablet"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "travelerRating"
-  }, " Traveler type"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }, " Traveler type"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("ul", {
     className: "ratingBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTypeFilter_0",
-    value: "Family"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTypeFilter_0",
-    className: "classified"
-  }, "Family")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTypeFilter_1",
-    value: "Couples"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTypeFilter_1",
-    className: "classified"
-  }, "Couples")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTypeFilter_2",
-    value: "Solo"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTypeFilter_2",
-    className: "classified"
-  }, "Solo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTypeFilter_3",
-    value: "Business"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTypeFilter_3",
-    className: "classified"
-  }, "Business")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTypeFilter_4",
-    value: "Friends"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTypeFilter_3",
-    className: "classified"
-  }, "Friends")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, travelTypes)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "ui_column  is-shown-at-tablet"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "travelerRating"
-  }, " Time of year"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }, " Time of year"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("ul", {
     className: "ratingBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTimeFilter_0",
-    value: "0"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTimeFilter_0",
-    className: "classified"
-  }, "Mar-May")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTimeFilter_1",
-    value: "1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTimeFilter_1",
-    className: "classified"
-  }, "Jun-Aug")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTimeFilter_2",
-    value: "2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTimeFilter_2",
-    className: "classified"
-  }, "Sep-Nov")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_checkbox _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "checkbox",
-    id: "TravelTimeFilter_3",
-    value: "3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "TravelTimeFilter_3",
-    className: "classified"
-  }, "Dec-Feb")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, travelTimes)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "ui_column  is-3-tablet is-shown-at-tablet"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "travelerRating"
-  }, " Language"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }, " Language"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("ul", {
     className: "ratingBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_radio _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "radio",
-    id: "LanguageFilter_0",
-    value: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "LanguageFilter_0",
-    className: "languageOption"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "lang"
-  }, " All languages"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_radio _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "radio",
-    id: "LanguageFilter_1",
-    value: "fr"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "LanguageFilter_1",
-    className: "languageOption"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "lang"
-  }, " French"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "langNum"
-  }, "(0)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_radio _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "radio",
-    id: "LanguageFilter_2",
-    value: "en"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "LanguageFilter_2",
-    className: "languageOption"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "lang"
-  }, " English"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "langNum"
-  }, "(40)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "ui_radio _3gEj_Jb5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "radio",
-    id: "LanguageFilter_3",
-    value: "es"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "LanguageFilter_3",
-    className: "languageOption"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "lang"
-  }, " Spanish"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "langNum"
-  }, "(0)")))))));
+  }, travelLangs))));
 };
 
 Summary.propTypes = {
-  ratings: prop_types__WEBPACK_IMPORTED_MODULE_1___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)).isRequired
+  ratings: prop_types__WEBPACK_IMPORTED_MODULE_3___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_3___default().number)).isRequired
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Summary);
 
