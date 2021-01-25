@@ -8,7 +8,7 @@ function getRandomInt(max) {
 }
 
 // eslint-disable-next-line no-plusplus
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 40; i++) {
   const review = new Review({
     title: faker.lorem.words(), // String is shorthand for {type: String}
     user: {
