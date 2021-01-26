@@ -6,7 +6,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Review = require('../database/Reviews.js');
 const funcs = require('./functions.js');
-const { then } = require('../database/index.js');
 
 const app = express();
 const port = 3003;
