@@ -4,19 +4,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
-// const db = require('../database/index.js');
 const Review = require('../database/Reviews.js');
 const funcs = require('./functions.js');
+const { then } = require('../database/index.js');
 
 const app = express();
 const port = 3003;
-// const sum = 40;
-// const percent = [funcs.getPercentage(20, sum),
-//   funcs.getPercentage(11, sum),
-//   funcs.getPercentage(5, sum),
-//   funcs.getPercentage(4, sum),
-//   funcs.getPercentage(0, sum),
-//   20, 11, 5, 4, 0];
 
 // middleware
 app.use(cors());
@@ -39,6 +32,11 @@ app.get('/api/ratings', (req, res) => {
   Review.find({}).then((reviewList) => funcs.getRatings(reviewList))
     .then((ratingList) => funcs.getPercentageList(ratingList))
     .then((result) => res.send(result));
+});
+
+app.get('/api/reviewFilter', (req, res) => {
+  Review.find({$and:[{ rating: { $in: [1] } },{tripeType:""}]})
+    .then((data) => res.send(data));
 });
 
 app.listen(port, () => {
