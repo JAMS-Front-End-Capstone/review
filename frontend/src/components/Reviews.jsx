@@ -55,7 +55,7 @@ const Reviews = () => {
 
   return (
     <div className="wrapper">
-      <div className="mainReview">
+      <div className="Rev-mainReview">
         <Menu total={reviews.length} />
         <WriteReview />
         <TabReview

@@ -2,13 +2,13 @@
 import React from 'react';
 
 const WriteReview = () => (
-  <div className="mainWrite">
-    <div className="subWrite">
-      <div className="write bottom">
-        <h2 className="writeText">Reviews</h2>
+  <div className="Rev-mainWrite">
+    <div className="Rev-subWrite">
+      <div className="Rev-mwrite Rev-mbottom">
+        <h2 className="Rev-writeText">Reviews</h2>
         <div />
-        <div className="mainLeftWrite">
-          <div className="subLeftWrite">
+        <div className="Rev-mainLeftWrite">
+          <div className="Rev-subLeftWrite">
             <span className="writeReview">
               <a href="" className="ui_button primary war-button">Write a review</a>
             </span>

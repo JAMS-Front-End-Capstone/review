@@ -90,7 +90,7 @@ const Summary = ({ ratings, rateArray }) => {
         id={langFilter[index]}
         value={langTypes[index]}
         name="langu"
-        checked={langTypes[index] === 'All languages'}
+        //checked={langTypes[index] === 'All languages'}
       />
       <label htmlFor={langFilter[index]} className="languageOption">
         <span className="lang">
