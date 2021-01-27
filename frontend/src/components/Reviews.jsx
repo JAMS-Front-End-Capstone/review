@@ -11,6 +11,12 @@ const Reviews = () => {
   const [ratingList, setRatingList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  const [filters, setFilters] = useState({
+    ratings: [],
+    type: [],
+    time: [],
+    lang: [],
+  });
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);

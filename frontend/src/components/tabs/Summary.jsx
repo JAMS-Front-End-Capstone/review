@@ -5,21 +5,35 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 
 const Summary = ({ ratings, rateArray }) => {
-  const [Checked, setChecked] = useState([]);
-  const reviewId = ['ReviewRatingFilter_5', 'ReviewRatingFilter_4', 'ReviewRatingFilter_3', 'ReviewRatingFilter_2', 'ReviewRatingFilter_1'];
+  const [ratingsChecked, setRatingsChecked] = useState([]);
+  const [typeChecked, setTypeChecked] = useState([]);
+  const [timeChecked, setTimeChecked] = useState([]);
+  //const [langChecked, SetLangChecked] = ustState('All languages');
 
-  const handleclick = (input) => {
-    const currentIndex = Checked.indexOf(input);
-    const newChecked = [...Checked];
+  const handleRateclick = (input) => {
+    const currentIndex = ratingsChecked.indexOf(input);
+    const newChecked = [...ratingsChecked];
 
     if (currentIndex === -1) {
       newChecked.push(input);
     } else {
       newChecked.splice(currentIndex, 1);
     }
-    setChecked(newChecked);
+    setRatingsChecked(newChecked);
   };
 
+  const handleTypeclick = (input) => {
+    const currentIndex = typeChecked.indexOf(input);
+    const newChecked = [...typeChecked];
+
+    if (currentIndex === -1) {
+      newChecked.push(input);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+  };
+
+  const reviewId = ['ReviewRatingFilter_5', 'ReviewRatingFilter_4', 'ReviewRatingFilter_3', 'ReviewRatingFilter_2', 'ReviewRatingFilter_1'];
   const travelRatings = ratings.slice(0, 5).map((rating, index) => (
     <li className="ui_checkbox _3gEj_Jb5" key={reviewId[index]}>
 
@@ -27,7 +41,7 @@ const Summary = ({ ratings, rateArray }) => {
         type="checkbox"
         id={reviewId[index]}
         value={index}
-        onClick={() => handleclick(rateArray[index].id)}
+        onClick={() => handleRateclick(rateArray[index].id)}
       />
       <label htmlFor={reviewId[index]} className="classified class_end">
         {rateArray[index].name}
@@ -44,7 +58,12 @@ const Summary = ({ ratings, rateArray }) => {
   const typeFilter = ['TravelTypeFilter_0', 'TravelTypeFilter_1', 'TravelTypeFilter_2', 'TravelTypeFilter_3', 'TravelTypeFilter_4', 'TravelTypeFilter_5'];
   const travelTypes = typeNames.map((typeName, index) => (
     <li className="ui_checkbox _3gEj_Jb5">
-      <input type="checkbox" id={typeFilter[index]} value={typeNames[index]} />
+      <input
+        type="checkbox"
+        id={typeFilter[index]}
+        value={typeNames[index]}
+        onClick={() => handleTypeclick(typeNames[index])}
+      />
       <label htmlFor={typeFilter[index]} className="classified">
         {typeNames[index]}
       </label>
@@ -66,7 +85,13 @@ const Summary = ({ ratings, rateArray }) => {
   const langFilter = ['LanguageFilter_0', 'LanguageFilter_1', 'LanguageFilter_2', 'LanguageFilter_3'];
   const travelLangs = langTypes.map((travelLan, index) => (
     <li className="ui_radio _3gEj_Jb5">
-      <input type="radio" id={langFilter[index]} value={langTypes[index]} name="langu" />
+      <input
+        type="radio"
+        id={langFilter[index]}
+        value={langTypes[index]}
+        name="langu"
+        checked={langTypes[index] === 'All languages'}
+      />
       <label htmlFor={langFilter[index]} className="languageOption">
         <span className="lang">
           {langTypes[index]}

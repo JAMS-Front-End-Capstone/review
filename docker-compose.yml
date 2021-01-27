@@ -2,11 +2,11 @@ version: '3'
 services:
   app:
     container_name: review
-    restart: always
+    restart: on-failure
     build: .
     ports:
       - '80:3003'
-    links:
+    depends_on:
       - mongo
   mongo:
     container_name: mongo
