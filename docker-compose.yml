@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    container_name: review
+    restart: on-failure
+    build: .
+    ports:
+      - '3003:3003'
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+
+   

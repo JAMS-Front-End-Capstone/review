@@ -6,7 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Review = require('../database/Reviews.js');
 const funcs = require('./functions.js');
-const { then } = require('../database/index.js');
+const db = require('../database/index.js');
 
 const app = express();
 const port = 3003;
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.get('/api/reviews', (req, res) => {
+app.get('/api/reviews/', (req, res) => {
   // eslint-disable-next-line array-callback-return
   Review.find({})
     .then((reviews) => res.send(reviews))
@@ -34,10 +34,10 @@ app.get('/api/ratings', (req, res) => {
     .then((result) => res.send(result));
 });
 
-app.get('/api/reviewFilter', (req, res) => {
-  Review.find({$and:[{ rating: { $in: [1] } },{tripeType:""}]})
-    .then((data) => res.send(data));
-});
+// app.get('/api/reviewFilter', (req, res) => {
+//   Review.find({$and:[{ rating: { $in: [1] } },{tripeType:0}]})
+//     .then((data) => res.send(data));
+// });
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
