@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "server": "nodemon backend/index.js",
-    "client": "webpack --watch -d source-map",
+    "start": "node backend/index.js",
+    "build": "webpack --watch",
+    "build-dev": "webpack --watch -d source-map",
     "seed": "node database/seed.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
@@ -28,6 +28,9 @@
     "react-test-renderer": "^17.0.1"
   },
   "devDependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@babel/runtime": "^7.12.5",
     "@babel/core": "^7.12.10",
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.10",
