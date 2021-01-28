@@ -20,6 +20,15 @@ services:
     volumes: 
       - mongo-data:/data/db
 
+  # mongo-seed:
+  #   container_name: 'mongo_seed'
+  #   build: ./database
+  #   networks: 
+  #     - fec-trip
+  #   volumes:
+  #     - mongo-data:/data/db
+    
+
 networks: 
   fec-trip:
     driver: bridge
