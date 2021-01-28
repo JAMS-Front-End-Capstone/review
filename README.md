@@ -8,8 +8,8 @@ insertion div ID: review
 
 bundle: review-bundle.js
 
-API: '/api/reviews'
-API: '/api/ratings'
+API: '/api/reviews/:item_id'
+API: '/api/ratings/:item_id'
 
 API port: 3002
 
