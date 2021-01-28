@@ -10,7 +10,7 @@ const WriteReview = () => (
         <div className="Rev-mainLeftWrite">
           <div className="Rev-subLeftWrite">
             <span className="writeReview">
-              <a href="" className="ui_button primary war-button">Write a review</a>
+              <a className="ui_button primary war-button">Write a review</a>
             </span>
             <div>
               <div>

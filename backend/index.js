@@ -6,7 +6,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Review = require('../database/Reviews.js');
 const funcs = require('./functions.js');
-const db = require('../database/index.js');
 
 const app = express();
 const port = 3003;
@@ -20,16 +19,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
-app.get('/api/reviews/', (req, res) => {
+app.get('/api/reviews/:item_id', (req, res) => {
   // eslint-disable-next-line array-callback-return
-  Review.find({})
+  const item = req.params.item_id;
+  Review.find({ item_id: item })
     .then((reviews) => res.send(reviews))
     .catch((err) => res.send(err));
   console.log('sent');
 });
 
-app.get('/api/ratings', (req, res) => {
-  Review.find({}).then((reviewList) => funcs.getRatings(reviewList))
+app.get('/api/ratings/:item_id', (req, res) => {
+  const item = req.params.item_id;
+  Review.find({ item_id: item }).then((reviewList) => funcs.getRatings(reviewList))
     .then((ratingList) => funcs.getPercentageList(ratingList))
     .then((result) => res.send(result));
 });

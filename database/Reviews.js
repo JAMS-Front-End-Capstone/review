@@ -8,9 +8,10 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const ReviewSchema = new Schema({
+  item_id: Number,
   title: String, // String is shorthand for {type: String}
   user: {
-    name: String,
+    item_id: Number,
     iconURL: String,
     location: [String],
     contributions: Number,

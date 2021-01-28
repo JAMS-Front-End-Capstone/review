@@ -3,4 +3,5 @@ import ReactDOM from 'react-dom';
 import Reviews from './components/Reviews';
 import './css/style.css';
 
-ReactDOM.render(<Reviews />, document.getElementById('review'));
+const item_id = 1;
+ReactDOM.render(<Reviews item_id={item_id} />, document.getElementById('review'));

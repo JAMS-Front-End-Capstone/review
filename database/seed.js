@@ -10,6 +10,7 @@ function getRandomInt(max) {
 // eslint-disable-next-line no-plusplus
 for (let i = 0; i < 40; i++) {
   const review = new Review({
+    item_id: 1,
     title: faker.lorem.words(), // String is shorthand for {type: String}
     user: {
       name: faker.internet.userName(),
@@ -29,8 +30,7 @@ for (let i = 0; i < 40; i++) {
   review.save((err, result) => {
     if (err) {
       console.log(err);
-    } else if (i === 10) {
-      console.log(result);
+    } else if (i === 40) {
       db.disconnect();
     }
   });
