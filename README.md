@@ -11,7 +11,7 @@ bundle: review-bundle.js
 API: '/api/reviews'
 API: '/api/ratings'
 
-API port: 3002
+API port: 3003
 
 Static files: '/'
 module 3 - port 3003

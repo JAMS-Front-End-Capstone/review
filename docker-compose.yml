@@ -6,6 +6,8 @@ services:
     build: .
     ports:
       - '3003:3003'
+    networks: 
+      - fec-trip
     depends_on:
       - mongo
   mongo:
@@ -13,5 +15,15 @@ services:
     image: mongo
     ports:
       - '27017:27017'
+    networks:
+      - fec-trip
+    volumes: 
+      - mongo-data:/data/db
 
-   
+networks: 
+  fec-trip:
+    driver: bridge
+volumes: 
+  mongo-data:
+    driver: local
+

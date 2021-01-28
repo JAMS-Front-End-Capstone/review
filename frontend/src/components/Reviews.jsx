@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable camelcase */
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import Menu from './Menu';
 import WriteReview from './WriteReview';
@@ -6,7 +7,7 @@ import TabReview from './TabReview';
 import Pagenation from './Pagenation';
 import { rateArray } from './data';
 
-const Reviews = () => {
+const Reviews = ({ item_id }) => {
   const [reviews, setReviews] = useState([]);
   const [ratingList, setRatingList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,18 +24,31 @@ const Reviews = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const getReviews = () => {
-    axios.get('/api/reviews')
+    axios.get(`/api/reviews/${item_id}`)
       .then((res) => {
         setReviews(res.data);
       });
   };
 
   const getRatings = () => {
-    axios.get('/api/ratings')
+    axios.get(`/api/ratings/${item_id}`)
       .then((ratings) => {
         setRatingList(ratings.data);
       });
   };
+
+  const handleFilters = useCallback((filter, category) => {
+    const newFilters = { ...filters };
+    newFilters[category] = filter;
+
+    if (category === 'price') {
+      // let priceValues = handlePrice(filter);
+      // newFilters[category] = priceValues;
+    }
+
+    //showFilteredResults(newFilters)
+    setFilters(newFilters);
+  }, []);
 
   const next = () => {
     if (indexOfLastPost !== reviews.length) {
@@ -62,6 +76,7 @@ const Reviews = () => {
           ratings={ratingList}
           list={currentPosts}
           rateArray={rateArray}
+          handleFilters={handleFilters}
         />
         <Pagenation
           postsPerPage={postsPerPage}
