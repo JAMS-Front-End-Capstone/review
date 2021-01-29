@@ -6,6 +6,7 @@ import WriteReview from './WriteReview';
 import TabReview from './TabReview';
 import Pagenation from './Pagenation';
 import { rateArray } from './data';
+const API_PROXY = document.getElementById('proxyUrl') ? document.getElementById('proxyUrl').attributes[2].nodeValue : '';
 
 const Reviews = ({ item_id }) => {
   const [reviews, setReviews] = useState([]);
@@ -22,16 +23,18 @@ const Reviews = ({ item_id }) => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = reviews.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const API_review = `/api/reviews/${item_id}`;
+  const API_ratings = `/api/ratings/${item_id}`;
 
   const getReviews = () => {
-    axios.get(`/api/reviews/${item_id}`)
+    axios.get(API_PROXY + API_review)
       .then((res) => {
         setReviews(res.data);
       });
   };
 
   const getRatings = () => {
-    axios.get(`/api/ratings/${item_id}`)
+    axios.get(API_PROXY + API_ratings)
       .then((ratings) => {
         setRatingList(ratings.data);
       });

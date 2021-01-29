@@ -2,7 +2,6 @@
 const faker = require('faker');
 const Review = require('./Reviews.js');
 const db = require('./index.js');
-const { ModuleFilenameHelpers } = require('webpack');
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max - 1) + 1);
