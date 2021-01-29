@@ -35,6 +35,10 @@ app.get('/api/ratings/:item_id', (req, res) => {
     .then((result) => res.send(result));
 });
 
+// app.get('/api/seedata', (res, res) => {
+//   const
+// })
+
 // app.get('/api/reviewFilter', (req, res) => {
 //   Review.find({$and:[{ rating: { $in: [1] } },{tripeType:0}]})
 //     .then((data) => res.send(data));
