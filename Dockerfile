@@ -14,4 +14,5 @@ COPY . .
 
 EXPOSE 3003
 
+CMD ["npm","run","seed"]
 CMD ["npm","run","start"]
