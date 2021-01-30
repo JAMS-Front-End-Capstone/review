@@ -13,8 +13,4 @@ const ReviewList = ({ list }) => (
   </div>
 );
 
-// ReviewList.propTypes = {
-//   loading: propTypes.bool.isRequired,
-
-// };
 export default ReviewList;

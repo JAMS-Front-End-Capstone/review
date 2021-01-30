@@ -1,8 +1,7 @@
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
 
 const Summary = ({ ratings, rateArray, handleFilters }) => {
   // const [ratingsChecked, setRatingsChecked] = useState([]);
@@ -153,7 +152,4 @@ const Summary = ({ ratings, rateArray, handleFilters }) => {
   );
 };
 
-Summary.propTypes = {
-  ratings: propTypes.arrayOf(propTypes.number).isRequired,
-};
 export default Summary;

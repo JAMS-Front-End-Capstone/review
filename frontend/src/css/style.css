@@ -100,15 +100,16 @@ ul {
   padding-left: 24px;
   padding-right: 24px;
   flex: none;
-  width: 66.66666667%;
+  /* width: 66.66666667%; */
   font-family: 'Trip Sans',Arial,sans-serif!important
 }
 #review .Rev-mainMenu,
 #review .Rev-mainWrite {
-  background-color: #fff
+  background-color: #fff;
+  width: 837.328px;
 }
 #review .Rev-subMenu {
-  display: flex
+  display: flex;
 }
 #review .Rev-subMenu span {
   flex: 1;

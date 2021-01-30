@@ -1,7 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
-import propTypes from 'prop-types';
 
 const Menu = ({ total }) => (
   <div className="Rev-mainMenu">
@@ -27,7 +25,4 @@ const Menu = ({ total }) => (
 
 );
 
-Menu.propTypes = {
-  total: propTypes.number.isRequired,
-};
 export default Menu;
