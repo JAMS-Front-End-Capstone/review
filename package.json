@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node backend/index.js",
-    "build": "webpack --watch",
+    "build": "webpack",
     "build-dev": "webpack --watch -d source-map",
     "seed": "node database/seed.js"
   },
