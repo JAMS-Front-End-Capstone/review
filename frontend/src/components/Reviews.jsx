@@ -6,6 +6,7 @@ import WriteReview from './WriteReview';
 import TabReview from './TabReview';
 import Pagenation from './Pagenation';
 import { rateArray } from './data';
+
 const API_PROXY = document.getElementById('proxyUrl') ? document.getElementById('proxyUrl').attributes[2].nodeValue : '';
 
 const Reviews = ({ item_id }) => {

@@ -1,40 +1,39 @@
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
 
 const Summary = ({ ratings, rateArray, handleFilters }) => {
-  const [ratingsChecked, setRatingsChecked] = useState([]);
-  const [typeChecked, setTypeChecked] = useState([]);
-  //const [timeChecked, setTimeChecked] = useState([]);
-  //const [langChecked, SetLangChecked] = ustState('All languages');
+  // const [ratingsChecked, setRatingsChecked] = useState([]);
+  // const [typeChecked, setTypeChecked] = useState([]);
+  // //const [timeChecked, setTimeChecked] = useState([]);
+  // //const [langChecked, SetLangChecked] = ustState('All languages');
 
-  const handleRateclick = (input) => {
-    const currentIndex = ratingsChecked.indexOf(input);
-    const newChecked = [...ratingsChecked];
+  // const handleRateclick = (input) => {
+  //   const currentIndex = ratingsChecked.indexOf(input);
+  //   const newChecked = [...ratingsChecked];
 
-    if (currentIndex === -1) {
-      newChecked.push(input);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-    setRatingsChecked(newChecked);
-    handleFilters(newChecked, 'ratings');
-  };
+  //   if (currentIndex === -1) {
+  //     newChecked.push(input);
+  //   } else {
+  //     newChecked.splice(currentIndex, 1);
+  //   }
+  //   setRatingsChecked(newChecked);
+  //   handleFilters(newChecked, 'ratings');
+  // };
 
-  const handleTypeclick = (input) => {
-    const currentIndex = typeChecked.indexOf(input);
-    const newChecked = [...typeChecked];
+  // const handleTypeclick = (input) => {
+  //   const currentIndex = typeChecked.indexOf(input);
+  //   const newChecked = [...typeChecked];
 
-    if (currentIndex === -1) {
-      newChecked.push(input);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-    setTypeChecked(newChecked);
-    handleFilters(newChecked, 'type');
-  };
+  //   if (currentIndex === -1) {
+  //     newChecked.push(input);
+  //   } else {
+  //     newChecked.splice(currentIndex, 1);
+  //   }
+  //   setTypeChecked(newChecked);
+  //   handleFilters(newChecked, 'type');
+  // };
 
   // const handleTimeclick = (input) => {
   //   const currentIndex = timeChecked.indexOf(input);
@@ -57,7 +56,7 @@ const Summary = ({ ratings, rateArray, handleFilters }) => {
         type="checkbox"
         id={reviewId[index]}
         value={index}
-        onClick={() => handleRateclick(rateArray[index].id)}
+        // onClick={() => handleRateclick(rateArray[index].id)}
       />
       <label htmlFor={reviewId[index]} className="classified class_end">
         {rateArray[index].name}
@@ -94,7 +93,7 @@ const Summary = ({ ratings, rateArray, handleFilters }) => {
         type="checkbox"
         id={timeFilter[index]}
         value={index}
-        onClick={() => handleRateclick(travelMonths[index])}
+        // onClick={() => handleRateclick(travelMonths[index])}
       />
       <label htmlFor={timeFilter[index]} className="classified">
         {travelMonths[index]}
@@ -153,7 +152,4 @@ const Summary = ({ ratings, rateArray, handleFilters }) => {
   );
 };
 
-Summary.propTypes = {
-  ratings: propTypes.arrayOf(propTypes.number).isRequired,
-};
 export default Summary;
